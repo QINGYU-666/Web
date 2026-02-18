@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xtn - 夏透喃</title>
-    <link rel="icon" href="/Web/img/favicon.ico">
+    <link rel="icon" href="./static/img/favicon.ico">
     <meta name="description" content="Xtn.....">
     <meta name="keywords" content="xtn,喃娘,nanniang,喃娘主页,夏透喃引导页,NanNiang，XtnAPI,喃娘API,免费API">
     <style>
         /* 字体引入 */
         @font-face {
             font-family: "Ubuntu";
-            src: url("/Web/fonts/Ubuntu-Regular.ttf");
+            src: url("./static/fonts/Ubuntu-Regular.ttf");
             font-display: swap;
         }
 
         @font-face {
             font-family: "Pacifico";
-            src: url("/Web/fonts/Pacifico-Regular.ttf");
+            src: url("./static/fonts/Pacifico-Regular.ttf");
             font-display: swap;
         }
 
@@ -53,7 +53,7 @@
         body {
             font-family: "Ubuntu", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--background-color);
-            background-image: url("/Web/img/background.jpg");
+            background-image: url("./static/img/background.jpg");
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -62,6 +62,7 @@
             transition: background-color 0.3s ease, color 0.3s ease;
         }
 
+        /* 背景图片覆盖层，确保文字可读性 */
         body::before {
             content: '';
             position: fixed;
@@ -78,6 +79,7 @@
             background-color: rgba(29, 29, 31, 0.9);
         }
 
+        /* 导航栏 */
         .navbar {
             position: fixed;
             top: 0;
@@ -138,6 +140,7 @@
             opacity: 1;
         }
 
+        /* 英雄区域 */
         .hero {
             padding-top: 100px;
             padding-bottom: 80px;
@@ -171,6 +174,52 @@
             font-weight: 400;
         }
 
+        .hero-description {
+            font-size: 16px;
+            color: var(--secondary-text-color);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-links {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+
+        .hero-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background-color: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .hero-link:hover {
+            background-color: #0077ed;
+            transform: translateY(-2px);
+        }
+
+        .hero-link.secondary {
+            background-color: var(--card-background);
+            color: var(--accent-color);
+            border: 1px solid var(--border-color);
+        }
+
+        .hero-link.secondary:hover {
+            background-color: var(--background-color);
+        }
+
+        /* 标签 */
         .tags {
             display: flex;
             justify-content: center;
@@ -195,13 +244,19 @@
             border-color: var(--accent-color);
         }
 
+        /* 内容区域 */
         .content {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
             margin-bottom: 80px;
         }
-
+.contact-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center;
+}
         .section {
             margin-bottom: 80px;
         }
@@ -213,50 +268,62 @@
             letter-spacing: -0.01em;
         }
 
-        .contacts {
+        /* 项目展示 */
+        .projects {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 30px;
         }
 
-        .contact-card {
+        .project-card {
             background-color: var(--card-background);
             border-radius: 16px;
             overflow: hidden;
             box-shadow: 0 4px 12px var(--shadow-color);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-decoration: none;
-            color: inherit;
-            display: block;
         }
 
-        .contact-card:hover {
+        .project-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 8px 24px var(--shadow-color);
         }
 
-.contact-image {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    object-position: center;
-}
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
 
-        .contact-content {
+        .project-content {
             padding: 24px;
         }
 
-        .contact-title {
+        .project-title {
             font-size: 20px;
             font-weight: 600;
             margin-bottom: 8px;
         }
 
-        .contact-description {
+        .project-description {
             font-size: 14px;
             color: var(--secondary-text-color);
+            margin-bottom: 16px;
         }
 
+        .project-link {
+            font-size: 14px;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-block;
+            transition: transform 0.2s ease;
+        }
+
+        .project-link:hover {
+            transform: translateX(4px);
+        }
+
+        /* 时间线 */
         .timeline {
             position: relative;
             max-width: 600px;
@@ -327,6 +394,7 @@
             color: var(--secondary-text-color);
         }
 
+        /* 页脚 */
         .footer {
             padding: 40px 20px;
             text-align: center;
@@ -363,6 +431,7 @@
             color: var(--secondary-text-color);
         }
 
+        /* 响应式设计 */
         @media (max-width: 768px) {
             .navbar-links {
                 display: none;
@@ -374,6 +443,16 @@
 
             .hero-subtitle {
                 font-size: 20px;
+            }
+
+            .hero-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-link {
+                width: 200px;
+                justify-content: center;
             }
 
             .timeline::after {
@@ -395,11 +474,12 @@
                 left: 23px;
             }
 
-            .contacts {
+            .projects {
                 grid-template-columns: 1fr;
             }
         }
 
+        /* 动画 */
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -416,30 +496,65 @@
             opacity: 0;
         }
 
-        .delay-1 { animation-delay: 0.1s; }
-        .delay-2 { animation-delay: 0.2s; }
-        .delay-3 { animation-delay: 0.3s; }
-        .delay-4 { animation-delay: 0.4s; }
-        .delay-5 { animation-delay: 0.5s; }
+        .delay-1 {
+            animation-delay: 0.1s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.3s;
+        }
+
+        .delay-4 {
+            animation-delay: 0.4s;
+        }
+
+        .delay-5 {
+            animation-delay: 0.5s;
+        }
     </style>
 </head>
 <body>
+    <!-- 导航栏 -->
     <nav class="navbar">
         <div class="navbar-container">
             <a href="#" class="navbar-logo">Xtn</a>
             <div class="navbar-links">
                 <a href="#about" class="navbar-link">关于</a>
-                <a href="#contacts" class="navbar-link">联系方式</a>
+                <a href="#projects" class="navbar-link">项目</a>
                 <a href="#timeline" class="navbar-link">时间线</a>
             </div>
             <button class="theme-toggle" id="themeToggle">🌙</button>
         </div>
     </nav>
 
+    <!-- 英雄区域 -->
     <section class="hero" id="about">
-        <img src="/Web/img/logo.png" alt="Xtn" class="hero-avatar fade-in">
+        <!-- <div style="position: relative; display: inline-block;">
+            <img src="./static/img/logo.png" alt="Xtn" class="hero-avatar fade-in" style="opacity: 0.1;">
+            <img src="./static/img/logokuang.png" alt="Avatar Frame" style="position: absolute; top: -31%; left: -15%; width: 130%; height: 130%; z-index: 1;">
+        </div> -->
+        <img src="./static/img/logo.png" alt="Xtn" class="hero-avatar fade-in">
         <h1 class="hero-title fade-in delay-1">Hello, I'm Xtn</h1>
         <p class="hero-subtitle fade-in delay-2">Full-Stack Entertainment Engineer</p>
+        <div class="hero-links fade-in delay-4">
+            <a href="https://github.com/xtnu" class="hero-link" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+                GitHub
+            </a>
+            <a href="mailto:xtnok@outlook.com" class="hero-link secondary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                邮件
+            </a>
+        </div>
         <div class="tags fade-in delay-5">
             <span class="tag">网瘾</span>
             <span class="tag">没救了</span>
@@ -452,7 +567,9 @@
         </div>
     </section>
 
+    <!-- 内容区域 -->
     <div class="content">
+        <!-- 项目部分 -->
         <section class="section" id="contacts">
             <h2 class="section-title fade-in">联系方式</h2>
             <div class="contacts">
@@ -494,6 +611,7 @@
             </div>
         </section>
 
+        <!-- 时间线部分 -->
         <section class="section" id="timeline">
             <h2 class="section-title fade-in">时间线</h2>
             <div class="timeline">
@@ -531,12 +649,14 @@
         </section>
     </div>
 
+    <!-- 页脚 -->
     <footer class="footer">
         <div class="footer-text">Xtn © 2025</div>
         <div class="footer-links">
             <a href="https://521567.xyz/" class="footer-link">主页</a>
             <a href="https://icp.gov.moe/?keyword=20268999" class="footer-link" target="_blank">萌ICP备20268999号</a>
-            <a href="https://icp.gov.moe/?keyword=20256661" class="footer-link" target="_blank">萌ICP备20256661号</a>
+       <a href="https://icp.gov.moe/?keyword=20256661" class="footer-link" target="_blank">萌ICP备20256661号</a>
+
         </div>
         <div class="footer-copyright">
             ❤️
@@ -544,9 +664,11 @@
     </footer>
 
     <script>
+        // 主题切换功能
         const themeToggle = document.getElementById('themeToggle');
         const html = document.documentElement;
 
+        // 检查本地存储中的主题设置
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme) {
             html.setAttribute('data-theme', savedTheme);
@@ -562,6 +684,7 @@
             themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
         });
 
+        // 滚动动画
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -575,11 +698,13 @@
             });
         }, observerOptions);
 
+        // 观察所有需要动画的元素
         document.querySelectorAll('.fade-in').forEach(el => {
             el.style.animationPlayState = 'paused';
             observer.observe(el);
         });
 
+        // 平滑滚动
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -594,4 +719,7 @@
         });
     </script>
 </body>
+
 </html>
+
+
