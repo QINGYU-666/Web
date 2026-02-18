@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>晴雨 - QINGYU</title>
+    <title>Xtn - 夏透喃</title>
+    <link rel="icon" href="./static/img/favicon.ico">
     <meta name="description" content="Xtn.....">
     <meta name="keywords" content="xtn,喃娘,nanniang,喃娘主页,夏透喃引导页,NanNiang，XtnAPI,喃娘API,免费API">
     <style>
@@ -234,11 +235,12 @@
             box-shadow: 0 8px 24px var(--shadow-color);
         }
 
-        .contact-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
+.contact-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center;
+}
 
         .contact-content {
             padding: 24px;
@@ -454,13 +456,16 @@
         <section class="section" id="contacts">
             <h2 class="section-title fade-in">联系方式</h2>
             <div class="contacts">
-                <a href="https://t.me/QYapk" class="contact-card fade-in delay-0" target="_blank">
-                    <img src="Web/static/img/Telegram.png" alt="TG频道" class="contact-image">
-                    <div class="contact-content">
-                        <h3 class="contact-title">TG频道</h3>
-                        <p class="contact-description">Telegram 频道</p>
-                    </div>
-                </a>
+				<a class="list-item" href="javascript:void(0);" data-href="mqqapi://card/show_pslcard?src_type=internal&version=1&uin=3972665547&card_type=person&source=qrcode">
+					<span class="material-icons list-icon">chat</span>
+                    <img src="Web/static/img/QQ.png" class="contact-image">
+
+					<div class="list-content">
+						<div class="list-title">QQ</div>
+					</div>
+					<span class="material-icons" style="color: var(--md-outline);">person_add_alt</span>
+				</a>
+				
                 <a href="https://t.me/QINGYUTvT" class="contact-card fade-in delay-1" target="_blank">
                     <img src="Web/static/img/Telegram.png" alt="TG联系" class="contact-image">
                     <div class="contact-content">
