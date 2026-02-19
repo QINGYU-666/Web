@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN" data-theme="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +12,7 @@
             src: url("/Web/static/fonts/Ubuntu-Regular.ttf");
             font-display: swap;
         }
-
+        
         :root {
             --background-color: #f5f5f7;
             --text-color: #1d1d1f;
@@ -22,7 +23,7 @@
             --header-bg: rgba(245,245,247,0.85);
             --shadow: 0 10px 30px rgba(0,0,0,0.08);
         }
-
+        
         [data-theme="dark"] {
             --background-color: #0f0f11;
             --text-color: #f5f5f7;
@@ -33,13 +34,13 @@
             --header-bg: rgba(15,15,17,0.85);
             --shadow: 0 10px 30px rgba(0,0,0,0.4);
         }
-
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
             font-family: "Ubuntu", system-ui, -apple-system, sans-serif;
             background: var(--background-color) url("/Web/static/img/background.jpg") center/cover fixed;
@@ -49,7 +50,7 @@
             flex-direction: column;
             transition: background 0.4s ease;
         }
-
+        
         body::before {
             content: "";
             position: fixed;
@@ -58,11 +59,11 @@
             z-index: -2;
             transition: background 0.4s ease;
         }
-
+        
         [data-theme="dark"] body::before {
             background: rgba(15,15,17,0.92);
         }
-
+        
         .navbar {
             position: fixed;
             top: 0;
@@ -75,7 +76,7 @@
             border-bottom: 1px solid var(--border-color);
             z-index: 1000;
         }
-
+        
         .nav-container {
             max-width: 1100px;
             margin: 0 auto;
@@ -85,7 +86,7 @@
             align-items: center;
             justify-content: flex-end;
         }
-
+        
         .theme-toggle {
             background: none;
             border: none;
@@ -95,12 +96,12 @@
             opacity: 0.85;
             transition: all 0.2s;
         }
-
+        
         .theme-toggle:hover {
             opacity: 1;
             transform: scale(1.15);
         }
-
+        
         main {
             flex: 1;
             display: flex;
@@ -108,7 +109,7 @@
             justify-content: center;
             padding: 100px 20px 60px;
         }
-
+        
         .profile-card {
             background: var(--card-bg);
             backdrop-filter: blur(16px);
@@ -122,11 +123,11 @@
             box-shadow: var(--shadow);
             transition: transform 0.3s ease;
         }
-
+        
         .profile-card:hover {
             transform: translateY(-6px);
         }
-
+        
         .avatar {
             width: 120px;
             height: 120px;
@@ -136,27 +137,27 @@
             margin-bottom: 24px;
             box-shadow: 0 8px 24px rgba(0,0,0,0.15);
         }
-
+        
         h1 {
             font-size: 2.4rem;
             margin-bottom: 8px;
             font-weight: 600;
             letter-spacing: -0.5px;
         }
-
+        
         .subtitle {
             font-size: 1.1rem;
             color: var(--secondary-text);
             margin-bottom: 32px;
         }
-
+        
         .links-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 16px;
             margin: 32px 0;
         }
-
+        
         .link-btn {
             display: flex;
             align-items: center;
@@ -173,22 +174,22 @@
             backdrop-filter: blur(10px);
             transition: all 0.25s ease;
         }
-
+        
         [data-theme="dark"] .link-btn {
             background: rgba(40,40,45,0.4);
         }
-
+        
         .link-btn:hover {
             background: var(--accent-color);
             color: white;
             transform: translateY(-2px);
             box-shadow: 0 8px 24px rgba(0,113,227,0.3);
         }
-
+        
         .link-btn:active {
             transform: translateY(0);
         }
-
+        
         .footer {
             padding: 32px 20px;
             text-align: center;
@@ -198,16 +199,16 @@
             background: var(--card-bg);
             backdrop-filter: blur(10px);
         }
-
+        
         .footer a {
             color: var(--accent-color);
             text-decoration: none;
         }
-
+        
         .footer a:hover {
             text-decoration: underline;
         }
-
+        
         @media (max-width: 500px) {
             .profile-card {
                 padding: 36px 24px;
@@ -217,6 +218,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <nav class="navbar">
@@ -227,7 +229,6 @@
 
     <main>
         <div class="profile-card">
-            <!-- 建议你换成自己的头像，放在 static/img/avatar.jpg -->
             <img src="/Web/static/img/logo.jpg" alt="Avatar" class="avatar">
 
             <h1>晴雨</h1>
@@ -235,19 +236,19 @@
 
             <div class="links-grid">
                 <a href="mqqapi://card/show_pslcard?src_type=internal&version=1&uin=3972665547&card_type=person&source=qrcode" class="link-btn" target="_blank" rel="noopener">
-                    QQ
+                    QQ主页
                 </a>
 
                 <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=5NIp1jRAmXL8UUFZbGkHsLYiV945Tmls&authKey=ra0bbXxNl2qb4hMe1L6o7odPTiqWIepvUmLKA1%2BPWlsAdVeMuZYK7aWu3K3LX6CS&noverify=0&group_code=1017770500" class="link-btn" target="_blank" rel="noopener">
                     QQ群
                 </a>
 
-                <a href="https://t.me/QINGYUTvT" class="link-btn" target="_blank" rel="noopener">
-                    Telegram
+                <a href="https://t.me/QYapk" class="link-btn" target="_blank" rel="noopener">
+                    Telegram频道
                 </a>
 
                 <a href="https://bbs.binmt.cc/home.php?mod=space&uid=147952&do=profile" class="link-btn" target="_blank" rel="noopener">
-                    Mt论坛
+                    Mt论坛主页
                 </a>
 
                 <!-- 可选：如果你有米游社或其他链接也可以加 -->
@@ -257,19 +258,19 @@
     </main>
 
     <footer class="footer">
-        <p>© 2025 晴雨 • Powered by GitHub Pages</p>
+        <p>© 2026 晴雨</p>
         <p>❤️ 摸鱼也要有态度</p>
     </footer>
 
     <script>
         const toggle = document.getElementById('themeToggle');
         const html = document.documentElement;
-
+        
         // 读取保存的主题
         const saved = localStorage.getItem('theme') || 'light';
         html.setAttribute('data-theme', saved);
         toggle.textContent = saved === 'dark' ? '☀️' : '🌙';
-
+        
         toggle.addEventListener('click', () => {
             let theme = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
             html.setAttribute('data-theme', theme);
@@ -278,4 +279,5 @@
         });
     </script>
 </body>
+
 </html>
